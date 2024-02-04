@@ -5,11 +5,17 @@ namespace Agenda
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            builder.Services.AddControllers(); // Suporte aos Controllers
-            builder.Services.AddDbContext<AppDbContext>(); // Suporte ao banco de dados
+
+            // Suporte aos Controllers
+            builder.Services.AddControllers();
+
+            // Suporte ao banco de dados
+            builder.Services.AddDbContext<AppDbContext>();
 
             var app = builder.Build();
-            app.MapControllers(); // Usar a Rota (Map) dos Controllers
+
+            // Usar a Rota (Map) dos Controllers
+            app.MapControllers();
 
             app.Run();
         }
